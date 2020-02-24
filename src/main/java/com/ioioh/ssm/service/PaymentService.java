@@ -5,6 +5,8 @@ import com.ioioh.ssm.domain.PaymentEvent;
 import com.ioioh.ssm.domain.PaymentState;
 import org.springframework.statemachine.StateMachine;
 
+import java.util.List;
+
 /**
  * 信用卡支付服务
  *
@@ -13,6 +15,12 @@ import org.springframework.statemachine.StateMachine;
  * @date 2020-02-06 8:04 PM
  */
 public interface PaymentService {
+
+    /**
+     *  获取信用卡支付列表
+     * @return
+     */
+    List<Payment> paymentList();
 
     /**
      * 创建信用卡支付

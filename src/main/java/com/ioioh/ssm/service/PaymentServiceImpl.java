@@ -11,12 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.statemachine.StateMachine;
-import org.springframework.statemachine.config.StateMachineFactory;
 import org.springframework.statemachine.support.DefaultStateMachineContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -38,6 +38,13 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentStateMachineBuilder paymentStateMachineBuilder;
     @Autowired
     private PaymentStateChangeInterceptor paymentStateChangeInterceptor;
+
+
+    @Override
+    public List<Payment> paymentList() {
+        List<Payment> payments = paymentRepository.paymentList();
+        return payments;
+    }
 
     @Override
     public Payment newPayment(Payment payment) {

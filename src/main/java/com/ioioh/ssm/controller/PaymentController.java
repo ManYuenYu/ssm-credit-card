@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author YuWenYuen
  * @version 1.0
@@ -19,6 +21,11 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @RequestMapping("/payment_list")
+    public List<Payment> paymentList(){
+        return paymentService.paymentList();
+    }
 
     /**
      * 创建信用卡支付

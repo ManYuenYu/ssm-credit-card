@@ -6,6 +6,9 @@ import com.ioioh.ssm.domain.Payment;
 import com.ioioh.ssm.mapper.PaymentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
 
 /**
  * @author YuWenYuen
@@ -18,6 +21,11 @@ public class PaymentRepository {
     @Autowired
     private PaymentMapper paymentMapper;
 
+
+    public List<Payment> paymentList(){
+        List<Payment> payments = paymentMapper.selectAll();
+        return payments;
+    }
 
     /**
      * 获取单个支付对象
