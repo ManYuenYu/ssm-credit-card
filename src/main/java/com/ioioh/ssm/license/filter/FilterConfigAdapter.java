@@ -13,14 +13,14 @@ import java.util.List;
  * @date 2020-02-25 3:52 PM
  */
 @Configuration
-public class LicenseFilterConfigAdapter {
+public class FilterConfigAdapter {
 
     @Bean
     public FilterRegistrationBean licenseFilterRegistration(){
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        LicenseFilter licenseFilter = new LicenseFilter();
-        registrationBean.setFilter(licenseFilter);
-        registrationBean.setName("licenseFilter");
+        ResultHandleFilter resultHandleFilter = new ResultHandleFilter();
+        registrationBean.setFilter(resultHandleFilter);
+        registrationBean.setName("resultHandleFilter");
         registrationBean.setOrder(1);
         List<String> urlList = new ArrayList<String>();
         urlList.add("/*");

@@ -1,4 +1,4 @@
-package com.ioioh.ssm.license;
+package com.ioioh.ssm.license.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;

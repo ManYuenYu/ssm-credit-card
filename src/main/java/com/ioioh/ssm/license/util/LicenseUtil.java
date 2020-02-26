@@ -1,4 +1,4 @@
-package com.ioioh.ssm.license.config;
+package com.ioioh.ssm.license.util;
 
 /**
  * @author YuWenYuen
@@ -12,5 +12,13 @@ public class LicenseUtil {
      */
     public static boolean resultPass = true;
 
+    /**
+     *  授权码
+     */
+    public static String licenseCode = null;
 
+    /**
+     * 授权验证服务器地址
+     */
+    public static String licenseServerAddress = null;
 }

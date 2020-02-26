@@ -14,13 +14,13 @@ import java.io.IOException;
  * @version 1.0
  * @date 2020-02-25 4:58 PM
  */
-public class LicenseResponseWrapper extends HttpServletResponseWrapper {
+public class ResponseWrapper extends HttpServletResponseWrapper {
 
     private ByteArrayOutputStream buffer;
 
     private ServletOutputStream out;
 
-    public LicenseResponseWrapper(HttpServletResponse response) {
+    public ResponseWrapper(HttpServletResponse response) {
 
         super(response);
         buffer = new ByteArrayOutputStream();
@@ -28,8 +28,7 @@ public class LicenseResponseWrapper extends HttpServletResponseWrapper {
     }
 
     @Override
-    public ServletOutputStream getOutputStream()
-            throws IOException
+    public ServletOutputStream getOutputStream() throws IOException
     {
         return out;
     }
